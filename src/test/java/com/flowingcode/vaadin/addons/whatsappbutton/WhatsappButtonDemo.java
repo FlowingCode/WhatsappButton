@@ -15,7 +15,7 @@ import com.vaadin.flow.router.Route;
 @DemoSource
 @PageTitle("Whatsapp Button Demo")
 @SuppressWarnings("serial")
-@Route(value="demo", layout=WhatsappButtonDemoView.class)
+@Route(value="whatsappbutton", layout=WhatsappButtonDemoView.class)
 public class WhatsappButtonDemo extends Div {
 
   public WhatsappButtonDemo() {
