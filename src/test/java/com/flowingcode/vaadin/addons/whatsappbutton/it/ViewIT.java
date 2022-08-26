@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Whatsapp Button Add-on
  * %%
- * Copyright (C) 2021 Flowing Code
+ * Copyright (C) 2022 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.template.it;
+package com.flowingcode.vaadin.addons.whatsappbutton.it;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -58,7 +58,7 @@ public class ViewIT extends AbstractViewTest {
 
   @Test
   public void componentWorks() {
-    TestBenchElement element = $("paper-input").first();
+    TestBenchElement element = $("fc-whatsapp-button").first();
     assertThat(element, hasBeenUpgradedToCustomElement);
   }
 }

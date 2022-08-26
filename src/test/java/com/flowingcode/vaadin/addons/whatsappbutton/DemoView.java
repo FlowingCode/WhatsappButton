@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Whatsapp Button Add-on
  * %%
- * Copyright (C) 2021 Flowing Code
+ * Copyright (C) 2022 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,19 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.template;
+package com.flowingcode.vaadin.addons.whatsappbutton;
 
-import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.dependency.NpmPackage;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
-@NpmPackage(value = "@polymer/paper-input", version = "3.2.1")
-@JsModule("@polymer/paper-input/paper-input.js")
-@Tag("paper-input")
-public class TemplateAddon extends Div {}
+@Route("")
+public class DemoView extends VerticalLayout implements BeforeEnterObserver {
+
+  @Override
+  public void beforeEnter(BeforeEnterEvent event) {
+    event.forwardTo(WhatsappButtonDemoView.class);
+  }
+}

@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Template Add-on
+ * Whatsapp Button Add-on
  * %%
  * Copyright (C) 2021 Flowing Code
  * %%

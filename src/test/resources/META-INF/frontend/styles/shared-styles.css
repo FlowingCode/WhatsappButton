@@ -1,1 +1,23 @@
 /*Demo styles*/
+
+.button-container {
+    margin: 40px 0;
+    align-items: center;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dialcode {
+    margin-right:5px;
+    max-width: 100px; 
+}
+
+.phone {
+    width:0;
+}

@@ -1,8 +1,8 @@
 /*-
  * #%L
- * App Layout Addon
+ * Whatsapp Button Addon
  * %%
- * Copyright (C) 2018 - 2020 Flowing Code
+ * Copyright (C) 2018 - 2022 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,22 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.template.test;
+package com.flowingcode.vaadin.addons.whatsappbutton.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import com.flowingcode.vaadin.addons.DemoLayout;
-import com.flowingcode.vaadin.addons.template.TemplateDemoView;
-import com.vaadin.flow.router.Route;
+
 import org.junit.Test;
+
+import com.flowingcode.vaadin.addons.DemoLayout;
+import com.flowingcode.vaadin.addons.whatsappbutton.WhatsappButtonDemoView;
+import com.vaadin.flow.router.Route;
 
 public class LayoutTest {
 
   @Test
   public void testDemoLayout() {
-    Route route = TemplateDemoView.class.getAnnotation(Route.class);
+    Route route = WhatsappButtonDemoView.class.getAnnotation(Route.class);
     assertEquals("com.flowingcode.vaadin.addons.DemoLayout", DemoLayout.class.getName());
     assertEquals(DemoLayout.class, route.layout());
     assertNotEquals("", route.value());

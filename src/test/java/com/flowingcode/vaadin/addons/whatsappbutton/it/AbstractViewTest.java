@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Whatsapp Button Add-on
  * %%
- * Copyright (C) 2021 Flowing Code
+ * Copyright (C) 2022 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
  * #L%
  */
 
-package com.flowingcode.vaadin.addons.template.it;
+package com.flowingcode.vaadin.addons.whatsappbutton.it;
 
 import com.vaadin.testbench.ScreenshotOnFailureRule;
 import com.vaadin.testbench.TestBench;
