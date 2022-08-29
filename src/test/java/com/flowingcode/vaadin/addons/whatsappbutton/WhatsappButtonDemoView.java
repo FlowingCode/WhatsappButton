@@ -22,13 +22,13 @@ package com.flowingcode.vaadin.addons.whatsappbutton;
 import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
-import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
 @Route(value = "whatsappbutton", layout = DemoLayout.class)
 @GithubLink("https://github.com/FlowingCode/WhatsappButton")
-@CssImport("./styles/whatsapp-button-demo-styles.css")
+@StyleSheet("context://frontend/styles/whatsapp-button-demo-styles.css")
 public class WhatsappButtonDemoView extends TabbedDemo {
 
   public WhatsappButtonDemoView() {
