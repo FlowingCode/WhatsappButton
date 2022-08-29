@@ -26,13 +26,13 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
-@Route(value = "template", layout = DemoLayout.class)
+@Route(value = "whatsappbutton", layout = DemoLayout.class)
 @GithubLink("https://github.com/FlowingCode/WhatsappButton")
 @CssImport("./styles/whatsapp-button-demo-styles.css")
 public class WhatsappButtonDemoView extends TabbedDemo {
 
   public WhatsappButtonDemoView() {
-    addDemo(WhatsappButtonDemo.class);
+    addDemo(new WhatsappButtonDemo());
     setSizeFull();
   }
 }
