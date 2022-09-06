@@ -4,7 +4,7 @@
 
 	<groupId>org.vaadin.addons.flowingcode</groupId>
 	<artifactId>whatsapp-button-addon</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>Whatsapp Button Add-on</name>
 	<description>Whatsapp Button Add-on</description>
 
@@ -37,7 +37,7 @@
 		<url>https://github.com/FlowingCode/WhatsappButton</url>
 		<connection>scm:git:git://github.com/FlowingCode/WhatsappButton.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com:/FlowingCode/WhatsappButton.git</developerConnection>
-		<tag>whatsapp-button-addon-1.0.1</tag>
+		<tag>master</tag>
 	</scm>
 
 	<dependencyManagement>
