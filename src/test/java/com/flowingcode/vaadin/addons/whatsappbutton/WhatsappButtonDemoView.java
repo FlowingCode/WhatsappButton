@@ -23,16 +23,18 @@ import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
 import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
-@Route(value = "whatsappbutton", layout = DemoLayout.class)
+@ParentLayout(DemoLayout.class)
+@Route("whatsappbutton")
 @GithubLink("https://github.com/FlowingCode/WhatsappButton")
 @StyleSheet("context://frontend/styles/whatsapp-button-demo-styles.css")
 public class WhatsappButtonDemoView extends TabbedDemo {
 
   public WhatsappButtonDemoView() {
-    addDemo(new WhatsappButtonDemo());
+    addDemo(WhatsappButtonDemo.class);
     setSizeFull();
   }
 }
