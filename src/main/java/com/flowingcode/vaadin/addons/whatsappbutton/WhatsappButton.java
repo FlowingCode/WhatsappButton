@@ -34,6 +34,8 @@ public class WhatsappButton extends Component {
     public WhatsappButton() {}
 
     /**
+     * Returns the phone number.
+     * 
      * @return String return the phone number
      */
     public String getPhone() {
@@ -41,6 +43,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Sets a phone number.
+     * 
      * @param phone the phone number to set
      */
     public void setPhone(String phone) {
@@ -48,6 +52,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Returns the dial code.
+     * 
      * @return String return the dialCode
      */
     public String getDialCode() {
@@ -55,6 +61,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Sets a dial code number.
+     * 
      * @param dialCode the dialCode to set
      */
     public void setDialCode(String dialCode) {
@@ -62,6 +70,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Returns the button's label.
+     * 
      * @return String return the label
      */
     public String getLabel() {
@@ -69,6 +79,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Sets the button's label. Default value is "Let's chat".
+     * 
      * @param label the label to set
      */
     public void setLabel(String label) {
@@ -76,6 +88,8 @@ public class WhatsappButton extends Component {
     }
 
     /**
+     * Returns the message text.
+     * 
      * @return String return the text
      */
     public String getText() {
@@ -83,48 +97,101 @@ public class WhatsappButton extends Component {
     }
 
     /**
-     * @param text the text to set
+     * Sets an invite code.
+     * 
+     * @param invite code the invite code to set
      */
     public void setInviteCode(String inviteCode) {
         this.getElement().setProperty("invitecode", inviteCode);
     }
 
+    /**
+     * Returns an invite code.
+     * 
+     * @return String return the invite code
+     */
     public String getInviteCode() {
         return this.getElement().getProperty("invitecode");
     }
 
+    /**
+     * Sets the message text to display. Default value is "Hi!".
+     * 
+     * @param text the message text to set
+     */
     public void setText(String text) {
         this.getElement().setProperty("text", text);
     }
 
+    /***
+     * Returns whether the button's icon is leading or not.
+     * 
+     * @return boolean true if icon is leading
+     */
     public boolean isLeadingIcon() {
         return this.getElement().getProperty("leading", false);
     }
 
+    /**
+     * Sets if button's icon should be in leading position or not. By default icon is trailing.
+     * 
+     * @param leading true to enable leading
+     */
     public void setLeadingIcon(boolean leading) {
         this.getElement().setProperty("leading", leading);
     }
 
+    /**
+     * Returns whether redirect is enabled or not.
+     * 
+     * @return boolean the redirect value
+     */
     public boolean isRedirect() {
         return this.getElement().getProperty("redirect", false);
     }
 
+    /**
+     * Sets redirect option. This value should be true when button is use in not mobile devices.
+     * 
+     * @param redirect true to enable redirect
+     */
     public void setRedirect(boolean redirect) {
         this.getElement().setProperty("redirect", redirect);
     }
 
+    /**
+     * Returns whether responsive is enabled or not.
+     * 
+     * @return boolean the responsive value
+     */
     public boolean isResponsive() {
         return this.getElement().getProperty("responsive", false);
     }
 
+    /**
+     * Sets responsive option.
+     * 
+     * @param redirect true to enable redirect
+     */
     public void setResponsive(boolean responsive) {
         this.getElement().setProperty("responsive", responsive);
     }
 
+    /**
+     * Returns whether dialog should be shown on button click.
+     * 
+     * @return boolean the show dialog value
+     */
     public boolean isShowDialog() {
         return this.getElement().getProperty("dialog", false);
     }
 
+    /**
+     * Sets dialog option. If true, a dialog will show on button click indicating whatsapp is
+     * opening.
+     * 
+     * @param redirect true to enable redirect
+     */
     public void setShowDialog(boolean dialog) {
         this.getElement().setProperty("dialog", dialog);
     }
