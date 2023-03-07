@@ -1,6 +1,8 @@
 package com.flowingcode.vaadin.addons.whatsappbutton;
 
 import com.flowingcode.vaadin.addons.demo.DemoSource;
+import com.vaadin.flow.component.AttachEvent;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.formlayout.FormLayout.ResponsiveStep;
@@ -11,13 +13,17 @@ import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
+import com.vaadin.flow.server.WebBrowser;
 
 @DemoSource
 @PageTitle("Whatsapp Button Demo")
 @Route(value = "whatsappbutton/whatsappbutton", layout = WhatsappButtonDemoView.class)
 @SuppressWarnings("serial")
 public class WhatsappButtonDemo extends Div {
-
+    
+  private Checkbox redirect;
+  
   public WhatsappButtonDemo() {
 
     WhatsappButton whatsappButton = new WhatsappButton();
@@ -69,7 +75,7 @@ public class WhatsappButtonDemo extends Div {
 
     Checkbox leadingIcon = new Checkbox();
     leadingIcon.addValueChangeListener(e -> whatsappButton.setLeadingIcon(e.getValue()));
-    Checkbox redirect = new Checkbox();
+    redirect = new Checkbox();
     redirect.addValueChangeListener(e -> whatsappButton.setRedirect(e.getValue()));
     Checkbox responsive = new Checkbox();
     responsive.addValueChangeListener(e -> whatsappButton.setResponsive(e.getValue()));
@@ -84,7 +90,7 @@ public class WhatsappButtonDemo extends Div {
     checksLayout.addFormItem(dialog, "Dialog");    
     add(checksLayout);    
   }
-
+  
   private TextField createTextField(String placeholder) {
     TextField textField = new TextField();
     textField.setPlaceholder(placeholder);
@@ -98,6 +104,20 @@ public class WhatsappButtonDemo extends Div {
     numberField.setPlaceholder(placeholder);
     numberField.setClearButtonVisible(true);
     return numberField;
+  }
+    
+  @Override
+  protected void onAttach(AttachEvent attachEvent) {
+    super.onAttach(attachEvent);
+    this.initializeRedirect();
+  }
+  
+  private void initializeRedirect() {
+    UI.getCurrent().getPage().retrieveExtendedClientDetails(details -> {
+      WebBrowser webBrowser = VaadinSession.getCurrent().getBrowser();
+      boolean isMobile = webBrowser != null && (webBrowser.isAndroid() || webBrowser.isIPhone() || webBrowser.isWindowsPhone() || details.isIPad());
+      redirect.setValue(!isMobile);
+    });   
   }
 
 }
