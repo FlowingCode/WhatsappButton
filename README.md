@@ -96,6 +96,12 @@ whatsappButton.setLeadingIcon(true);
 whatsappButton.setText("Hi, how can I help you?");
 add(whatsappButton);
 ```
+
+For not mobile devices, redirect should be enabled:
+```java
+whatsappButton.setRedirect(true);
+```
+
 ## Special configuration when using Spring
 
 By default, Vaadin Flow only includes ```com/vaadin/flow/component``` to be always scanned for UI components and views. For this reason, the addon might need to be whitelisted in order to display correctly. 
