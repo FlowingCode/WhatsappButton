@@ -104,6 +104,7 @@ public class WhatsappButtonDemo extends Div {
     IntegerField integerField = new IntegerField();
     integerField.setPlaceholder(placeholder);
     integerField.setClearButtonVisible(true);
+    integerField.setValueChangeMode(ValueChangeMode.ON_BLUR);
     return integerField;
   }
 
