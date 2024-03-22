@@ -8,26 +8,28 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.formlayout.FormLayout.ResponsiveStep;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
-import com.vaadin.flow.component.textfield.NumberField;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.server.WebBrowser;
+import org.apache.commons.lang3.StringUtils;
 
 @DemoSource
 @PageTitle("Whatsapp Button Demo")
 @Route(value = "whatsappbutton/whatsappbutton", layout = WhatsappButtonDemoView.class)
 @SuppressWarnings("serial")
 public class WhatsappButtonDemo extends Div {
-    
+
   private Checkbox redirect;
-  
+
   public WhatsappButtonDemo() {
 
     WhatsappButton whatsappButton = new WhatsappButton();
-    
+
     Div buttonContainer = new Div();
     buttonContainer.setClassName("centered button-container");
     buttonContainer.add(whatsappButton);
@@ -36,30 +38,32 @@ public class WhatsappButtonDemo extends Div {
     // button label
     TextField label = createTextField("Enter a label for the button");
     label.addValueChangeListener(e -> whatsappButton.setLabel(e.getValue()));
-    
+
     // message text
     TextArea text = new TextArea();
     text.setPlaceholder("Enter a text message");
     text.setWidthFull();
     text.setClearButtonVisible(true);
     text.addValueChangeListener(e -> whatsappButton.setText(e.getValue()));
-    
+
     // phone number (dial code + phone number)
     FlexLayout phoneLayout = new FlexLayout();
     phoneLayout.setWidthFull();
-    NumberField dialCode = createNumberField("Code");
+    IntegerField dialCode = createIntegerField("Code");
     dialCode.addClassName("dialcode");
-    dialCode.addValueChangeListener(e -> whatsappButton.setDialCode(String.valueOf(e.getValue().intValue())));
-    NumberField phone = createNumberField("Phone number");
+    dialCode.addValueChangeListener(e -> whatsappButton
+        .setDialCode(e.getValue() != null ? String.valueOf(e.getValue()) : StringUtils.EMPTY));
+    IntegerField phone = createIntegerField("Phone number");
     phone.addClassName("phone");
-    phone.addValueChangeListener(e -> whatsappButton.setPhone(String.valueOf(e.getValue().intValue())));
+    phone.addValueChangeListener(e -> whatsappButton
+        .setPhone(e.getValue() != null ? String.valueOf(e.getValue()) : StringUtils.EMPTY));
     phoneLayout.add(dialCode, phone);
     phoneLayout.expand(phone);
 
     // invite code
     TextField inviteCode = createTextField("Enter a invite code");
     inviteCode.addValueChangeListener(e -> whatsappButton.setInviteCode(e.getValue()));
-    
+
     FormLayout formLayout = new FormLayout();
     formLayout.addClassName("centered");
     formLayout.addFormItem(label, "Label");
@@ -68,10 +72,7 @@ public class WhatsappButtonDemo extends Div {
     formLayout.addFormItem(inviteCode, "Invite Code");
     add(formLayout);
 
-    formLayout.setResponsiveSteps(
-        new ResponsiveStep("0", 1),
-        new ResponsiveStep("900px", 2)
-    );
+    formLayout.setResponsiveSteps(new ResponsiveStep("0", 1), new ResponsiveStep("900px", 2));
 
     Checkbox leadingIcon = new Checkbox();
     leadingIcon.addValueChangeListener(e -> whatsappButton.setLeadingIcon(e.getValue()));
@@ -87,10 +88,10 @@ public class WhatsappButtonDemo extends Div {
     checksLayout.addFormItem(leadingIcon, "Leading Icon");
     checksLayout.addFormItem(redirect, "Redirect");
     checksLayout.addFormItem(responsive, "Responsive");
-    checksLayout.addFormItem(dialog, "Dialog");    
-    add(checksLayout);    
+    checksLayout.addFormItem(dialog, "Dialog");
+    add(checksLayout);
   }
-  
+
   private TextField createTextField(String placeholder) {
     TextField textField = new TextField();
     textField.setPlaceholder(placeholder);
@@ -99,25 +100,26 @@ public class WhatsappButtonDemo extends Div {
     return textField;
   }
 
-  private NumberField createNumberField(String placeholder) {
-    NumberField numberField = new NumberField();
-    numberField.setPlaceholder(placeholder);
-    numberField.setClearButtonVisible(true);
-    return numberField;
+  private IntegerField createIntegerField(String placeholder) {
+    IntegerField integerField = new IntegerField();
+    integerField.setPlaceholder(placeholder);
+    integerField.setClearButtonVisible(true);
+    return integerField;
   }
-    
+
   @Override
   protected void onAttach(AttachEvent attachEvent) {
     super.onAttach(attachEvent);
     this.initializeRedirect();
   }
-  
+
   private void initializeRedirect() {
     UI.getCurrent().getPage().retrieveExtendedClientDetails(details -> {
       WebBrowser webBrowser = VaadinSession.getCurrent().getBrowser();
-      boolean isMobile = webBrowser != null && (webBrowser.isAndroid() || webBrowser.isIPhone() || webBrowser.isWindowsPhone() || details.isIPad());
+      boolean isMobile = webBrowser != null && (webBrowser.isAndroid() || webBrowser.isIPhone()
+          || webBrowser.isWindowsPhone() || details.isIPad());
       redirect.setValue(!isMobile);
-    });   
+    });
   }
 
 }
