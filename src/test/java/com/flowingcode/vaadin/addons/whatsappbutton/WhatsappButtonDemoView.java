@@ -2,7 +2,7 @@
  * #%L
  * Whatsapp Button Add-on
  * %%
- * Copyright (C) 2022 Flowing Code
+ * Copyright (C) 2022 - 2024 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.flowingcode.vaadin.addons.whatsappbutton;
 import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
-import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
 
@@ -30,7 +30,7 @@ import com.vaadin.flow.router.Route;
 @ParentLayout(DemoLayout.class)
 @Route("whatsappbutton")
 @GithubLink("https://github.com/FlowingCode/WhatsappButton")
-@StyleSheet("context://frontend/styles/whatsapp-button-demo-styles.css")
+@CssImport("./styles/whatsapp-button-demo-styles.css")
 public class WhatsappButtonDemoView extends TabbedDemo {
 
   public WhatsappButtonDemoView() {
