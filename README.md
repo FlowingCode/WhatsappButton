@@ -1,6 +1,7 @@
 [![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/whatsapp-button-add-on)
 [![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/whatsapp-button-addon.svg)](https://vaadin.com/directory/component/whatsapp-button-add-on)
 [![Build Status](https://jenkins.flowingcode.com/job/WhatsappButton-addon/badge/icon)](https://jenkins.flowingcode.com/job/WhatsappButton-addon)
+[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/org.vaadin.addons.flowingcode/whatsapp-button-addon)
 
 # Whatsapp Button Add-on
 
