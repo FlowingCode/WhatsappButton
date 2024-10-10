@@ -20,6 +20,7 @@
 package com.flowingcode.vaadin.addons.whatsappbutton;
 
 import com.flowingcode.vaadin.addons.DemoLayout;
+import com.flowingcode.vaadin.addons.GithubBranch;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
 import com.vaadin.flow.component.dependency.StyleSheet;
@@ -30,6 +31,7 @@ import com.vaadin.flow.router.Route;
 @ParentLayout(DemoLayout.class)
 @Route("whatsappbutton")
 @GithubLink("https://github.com/FlowingCode/WhatsappButton")
+@GithubBranch("v23")
 @StyleSheet("context://frontend/styles/whatsapp-button-demo-styles.css")
 public class WhatsappButtonDemoView extends TabbedDemo {
 
