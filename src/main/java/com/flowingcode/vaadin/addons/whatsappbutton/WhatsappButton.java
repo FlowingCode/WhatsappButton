@@ -99,7 +99,7 @@ public class WhatsappButton extends Component {
     /**
      * Sets an invite code.
      * 
-     * @param invite code the invite code to set
+     * @param inviteCode the invite code to set
      */
     public void setInviteCode(String inviteCode) {
         this.getElement().setProperty("invitecode", inviteCode);
@@ -171,7 +171,7 @@ public class WhatsappButton extends Component {
     /**
      * Sets responsive option.
      * 
-     * @param redirect true to enable redirect
+     * @param responsive true to enable responsive option
      */
     public void setResponsive(boolean responsive) {
         this.getElement().setProperty("responsive", responsive);
@@ -190,7 +190,7 @@ public class WhatsappButton extends Component {
      * Sets dialog option. If true, a dialog will show on button click indicating whatsapp is
      * opening.
      * 
-     * @param redirect true to enable redirect
+     * @param dialog true to enable dialog option
      */
     public void setShowDialog(boolean dialog) {
         this.getElement().setProperty("dialog", dialog);
