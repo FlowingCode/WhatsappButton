@@ -17,3 +17,5 @@ types.d.ts
 /frontend/generated/vaadin.ts
 /frontend/index.html
 /frontend/generated
+vite.generated.ts
+vite.config.ts
