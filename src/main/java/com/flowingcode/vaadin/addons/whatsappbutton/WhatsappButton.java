@@ -2,7 +2,7 @@
  * #%L
  * Whatsapp Button Add-on
  * %%
- * Copyright (C) 2022 - 2024 Flowing Code
+ * Copyright (C) 2022 - 2026 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 
 @SuppressWarnings("serial")
 @Tag("fc-whatsapp-button")
-@NpmPackage(value = "@flowingcode/fc-whatsapp-button", version = "2.0.0")
+@NpmPackage(value = "@flowingcode/fc-whatsapp-button", version = "2.1.0")
 @JsModule("@flowingcode/fc-whatsapp-button/dist/src/fc-whatsapp-button.js")
 public class WhatsappButton extends Component {
 

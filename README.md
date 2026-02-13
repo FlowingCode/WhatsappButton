@@ -20,7 +20,7 @@ A simple button component to start Whatsapp conversations easily. It's based on 
 
 ## Online demo
 
-[Online demo here](http://addonsv23.flowingcode.com/whatsappbutton)
+[Online demo here](http://addonsv25.flowingcode.com/whatsappbutton)
 
 ## Download release
 
