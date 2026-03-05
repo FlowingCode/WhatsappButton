@@ -27,7 +27,7 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 
 @SuppressWarnings("serial")
 @Tag("fc-whatsapp-button")
-@NpmPackage(value = "@flowingcode/fc-whatsapp-button", version = "2.1.0")
+@NpmPackage(value = "@flowingcode/fc-whatsapp-button", version = "2.1.1")
 @JsModule("@flowingcode/fc-whatsapp-button/dist/src/fc-whatsapp-button.js")
 public class WhatsappButton extends Component {
 
