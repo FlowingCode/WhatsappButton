@@ -17,6 +17,8 @@ drivers
 /frontend/generated/vaadin.ts
 /frontend/index.html
 /frontend/generated
+/src/main/frontend/generated
+/src/main/frontend/index.html
 vite.generated.ts
 vite.config.ts
 /.claude/settings.local.json
